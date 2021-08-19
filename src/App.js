@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { Layout, Container, BoxUpload, ImagePreview } from "./style";
 import FolderIcon from "./assets/folder_icon_transparent.png";
 import CloseIcon from "./assets/CloseIcon.svg";
@@ -30,6 +30,7 @@ function App() {
       .then(result => {
         console.log(result)
         setImageUrl(result.secure_url)
+        setTypeFile(result.format)
       })
       .then(()=> setIsUploaded(true))
     }
